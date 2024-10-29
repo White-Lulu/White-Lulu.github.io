@@ -1,0 +1,712 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cherriy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		width:90%;
+		margin: 100px auto;
+		max-width: 90%;
+		color: rgb(55, 53, 47);
+		background-image: url('b7.jpg'); /* 设置背景图片 */
+		background-size: cover; /* 背景图像大小，cover表示自动适应整个屏幕 */
+		background-position: center; /* 背景居中 */
+		background-repeat: no-repeat; /* 背景不重复 */
+		background-attachment: fixed; /* 背景固定，不随滚动条滚动 */
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="12daef7c-92ea-8099-9a3e-cde710887188" class="page serif"><header><div class="page-header-icon undefined"><img class="icon" src="Cherriy%2012daef7c92ea80999a3ecde710887188/7c8f04fed19aabf958b25645bde8b57c_720.jpg"/></div><h1 class="page-title">Cherriy</h1><p class="page-description"></p></header><div class="page-body"><p id="12daef7c-92ea-800b-b6f3-f2f6ce6e208e" class="">Created by White-Lulu</p><p id="12daef7c-92ea-80a2-87c3-f40376654b12" class="">
+</p><div id="12daef7c-92ea-80d2-b86c-c92049da86b2" class="column-list"><div id="a6d63e61-3eae-4e04-87f0-aa9e8a682476" style="width:20.833333333333332%" class="column"><h3 id="12daef7c-92ea-806a-82b1-c88f9dbf9711" class="">联系作者</h3><div id="12eaef7c-92ea-8041-978e-d7c14c0acbd5" class="column-list"><div id="12eaef7c-92ea-80ff-b5c7-d8083c256e50" style="width:43.75%" class="column"><figure id="12eaef7c-92ea-8004-8155-f8f2c66df1d9" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/%25E5%25B1%258F%25E5%25B9%2595%25E6%2588%25AA%25E5%259B%25BE_2024-10-29_184752.png"><img style="width:108px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/%25E5%25B1%258F%25E5%25B9%2595%25E6%2588%25AA%25E5%259B%25BE_2024-10-29_184752.png"/></a></figure></div><div id="12eaef7c-92ea-8060-933f-d6415dd9c1be" style="width:106.25%" class="column"><p id="12eaef7c-92ea-80f8-a50c-d98cbdb655ff" class=""><em>_-</em>_-__-_—</p><p id="12eaef7c-92ea-8028-b142-d0d10c1e3acd" class="">luluffan@gmail.com</p><p id="12eaef7c-92ea-8068-8640-c5cc97547ddf" class="">White-Lulu</p><p id="12eaef7c-92ea-8088-8be8-ee9f4e506567" class="">@Luluffan</p></div></div><hr id="12daef7c-92ea-80de-814e-c2012d1385ab"/><h3 id="12daef7c-92ea-80e9-8456-fb170be08772" class="">进度- 🍒/8</h3><div id="12eaef7c-92ea-8003-9a28-cba3b5f52b4f" class="column-list"><div id="12eaef7c-92ea-80ab-950e-ff1a4ae05757" style="width:43.75%" class="column"><p id="12eaef7c-92ea-80f7-bd69-dd78ff4148f3" class="">Python</p><p id="12eaef7c-92ea-80aa-956b-da315b8e9bef" class="">C++</p><p id="12eaef7c-92ea-80bd-980e-c616dd4db7d9" class="">Flutter</p><p id="12eaef7c-92ea-8051-bbfd-d7c88bd7cf36" class="">
+</p><p id="12eaef7c-92ea-806e-9e65-ea5d06978eff" class="">MATLAB</p><p id="12eaef7c-92ea-8083-a737-ea42636c3d7f" class="">Mma</p><p id="12eaef7c-92ea-801e-a8d2-f606d09e91eb" class="">COMSOL</p><p id="12eaef7c-92ea-80ed-be63-c5178acd37cc" class="">
+</p><p id="12eaef7c-92ea-8027-a00d-e463edf682f3" class="">HTML</p><p id="12eaef7c-92ea-8052-a4cf-ee2055d6cf76" class="">Vue.js</p><p id="12eaef7c-92ea-80ca-9d2a-c6fb7476fda9" class="">React</p><p id="12eaef7c-92ea-80e6-9195-e01fcb8ab719" class="">Java</p><p id="12eaef7c-92ea-8048-b2bc-f44f87ccd098" class="">Kotlin</p><p id="12eaef7c-92ea-80ba-ae73-fe10a66c01b6" class="">XML</p><p id="12eaef7c-92ea-803c-9412-fcbddda08098" class="">MySQL</p><p id="12eaef7c-92ea-8072-9746-daff140f87d7" class="">…</p></div><div id="12eaef7c-92ea-80d4-9289-c7068dd53cb6" style="width:99.99999999999999%" class="column"><p id="12eaef7c-92ea-8020-b68a-d4c37f9248b4" class="">🍒🍒🍒🍒🍒🌱🌱🌱</p><p id="12eaef7c-92ea-8017-a5c3-c1457a6641c2" class="">🍒🍒🍒🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-8007-962b-ee76d88947fa" class="">🍒🍒🍒🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80f4-88a3-f1bb7129e0cb" class="">
+</p><p id="12eaef7c-92ea-80ca-8384-ef56ccf5aae1" class="">🍒🍒🍒🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80ad-b481-d5c22300e4c9" class="">🍒🍒🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-8060-8440-d6fd8d503eb2" class="">🍒🍒🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80ee-9b03-f9474676b950" class="">
+</p><p id="12eaef7c-92ea-805e-a1f3-c12789a56823" class="">🍒🍒🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80d9-8a1b-cca6eb48cbdb" class="">🌱🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80cf-9d12-e9946a90f406" class="">🌱🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-80bf-abb9-caf07ced1492" class="">🍒🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-8095-bc7b-ebbf47a9302d" class="">🌱🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-8054-963d-e2adcc446e7e" class="">🍒🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-803c-86f9-f0eaf7330495" class="">🌱🌱🌱🌱🌱🌱🌱🌱</p><p id="12eaef7c-92ea-8063-b0d8-c16ec8d84095" class="">
+</p></div></div></div><div id="8337c79c-b83c-46c7-9e8e-9dc7130a682f" style="width:41.666666666666664%" class="column"><h3 id="0e318cad-9460-44df-b35f-1a9dfac48e99" class=""><span style="border-bottom:0.05em solid">关于Cherriy</span></h3><p id="12daef7c-92ea-80c1-b30e-ec4f96186636" class="">
+</p><p id="12daef7c-92ea-80a6-9981-e76ac265538e" class="">🌟<mark class="highlight-blue"><mark class="highlight-blue_background"><strong>最新版本下载链接 ↓</strong></mark></mark><strong> [非常感谢您的测试与反馈！！！]：</strong></p><p id="12eaef7c-92ea-807f-b507-e71f00014ad7" class="">
+</p><p id="12eaef7c-92ea-8047-9abf-df8bb8fcada1" class=""><a href="Cherriy.apk" download><mark class="highlight-blue"><strong><span style="border-bottom:0.05em solid">Cherriy 1.3.0 APK</span></strong></mark></a>
+
+</p><p id="12eaef7c-92ea-80cf-8215-f20b829f277b" class="">⚠️ 作者水平有限QAQ，如果更新后发现页面出现<mark class="highlight-default"><strong><span style="border-bottom:0.05em solid">卡死等严重bug</span></strong></mark>，请在手机设置中内对Cherriy进行*清除所有应用数据*后，再打开（或者直接卸载软件，重新点击链接下载安装）。并且，请尽量在清除数据或写在前<mark class="highlight-red"><strong><span style="border-bottom:0.05em solid">备份好数据</span></strong></mark>：/  data / user / 0 / com.example.cherriy / shared_prefs / FlutterSharedPreferences.xml（请发给作者）（不久后一定增加自动备份选项。。）（或者直接截图备份..）</p><hr id="12eaef7c-92ea-806d-909d-d5f9e511d969"/><div id="12eaef7c-92ea-8083-9a43-fbb165d10302" class="column-list"><div id="12eaef7c-92ea-80a4-9efb-f890199a8531" style="width:100%" class="column"><p id="12daef7c-92ea-80c6-9829-eaa1a3788299" class="">✅<mark class="highlight-blue"><mark class="highlight-blue_background"><strong> 更新日志</strong></mark></mark><strong>：</strong></p><p id="12daef7c-92ea-8031-9aea-de015f1ba2f0" class="">[ The Latest ] 2024.10.27</p><p id="12daef7c-92ea-8047-87d7-f477acf5f071" class="">🍬：记账页面增加了筛选×2，排序×2，视图，删除功能，修复了一些bug</p><p id="12daef7c-92ea-802b-b3bd-d73d365c3c25" class="">❗：感觉项目优化成了依托答辩，同时有一些交互逻辑（键盘弹出）问题，待完善ui风格，细节</p><p id="12daef7c-92ea-808e-bc51-f4e935d704d4" class="">🛠️：先做大体框架功能，细节后面再填</p><p id="12eaef7c-92ea-802b-a2e9-de43afc1c5e5" class="">
+</p><div id="12daef7c-92ea-80fc-b6e9-e4e0008cae3f" class="collection-content"><h4 class="collection-title">更新日志</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th></tr></thead><tbody><tr id="051cde54-20a2-4a1d-ad4b-3a56baeef685"><td class="cell-title"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97%2012daef7c92ea80fcb6e9e4e0008cae3f/2024%2010%2027%20051cde5420a24a1dad4b3a56baeef685.html">2024.10.27</a></td><td class="cell-AkFu"><span class="selected-value select-value-color-green">UI</span><span class="selected-value select-value-color-purple">功能</span><span class="selected-value select-value-color-yellow">记账</span></td></tr></tbody></table><br/><br/></div></div><div id="12eaef7c-92ea-8078-839e-e3a811616b3b" style="width:100%" class="column"><figure id="12eaef7c-92ea-80b4-9a10-c36a5ee25718" class="image" style="text-align:center"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/image.png"><img style="width:288px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/image.png"/></a></figure></div></div><p id="12eaef7c-92ea-80c5-a9aa-f998bed3d08e" class="">
+</p></div><div id="12eaef7c-92ea-806b-925f-f57f92bb7ce9" style="width:37.500000000000014%" class="column"><h3 id="12eaef7c-92ea-80be-8def-f6162065a6a5" class="">🎊其他栏目</h3><hr id="12eaef7c-92ea-80f3-93bc-c5177372866d"/><div id="12eaef7c-92ea-8015-8f83-f0f82642cc8c" class="column-list"><div id="12eaef7c-92ea-80c8-a0c8-f0c29cacf54e" style="width:106.25%" class="column"><figure id="12eaef7c-92ea-8021-8459-dc73f8e9ed95" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240323_173703.jpg"><img style="width:330px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240323_173703.jpg"/></a></figure><figure id="12eaef7c-92ea-807c-ad67-d85ba6df2dc4" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240825_010934.jpg"><img style="width:4624px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240825_010934.jpg"/></a></figure><h3 id="12eaef7c-92ea-810e-b30b-c7ee0016e710" class="block-color-blue"><em><span style="border-bottom:0.05em solid">q-OwO-p！！！</span></em></h3></div><div id="12eaef7c-92ea-80e6-9f2a-f9428c691d6e" style="width:93.75%" class="column"><figure id="12eaef7c-92ea-8081-860d-d11650f8c951" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240414_213129.jpg"><img style="width:432px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240414_213129.jpg"/></a></figure><figure id="12eaef7c-92ea-81cd-a3c4-c26556a08d89" class="block-color-blue_background link-to-page"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/%E6%9A%B4%E8%AE%BA%2012eaef7c92ea81cda3c4c26556a08d89.html"><span class="icon">🤗</span>暴论</a></figure><h3 id="12eaef7c-92ea-81e3-b953-fafe19e6e6b7" class=""><em><mark class="highlight-pink"><span style="border-bottom:0.05em solid">Trash！！</span></mark></em></h3><figure id="12eaef7c-92ea-80ff-8ae9-f342c59de1f0" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240829_171951.jpg"><img style="width:288px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/IMG_20240829_171951.jpg"/></a></figure><figure id="12eaef7c-92ea-81ae-ab80-d860c1cd0cef" class="block-color-blue_background link-to-page"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/%E7%85%A7%E7%89%87%20%E7%94%BB%2012eaef7c92ea81aeab80d860c1cd0cef.html"><span class="icon">🏞️</span>照片/画</a></figure></div></div><hr id="12eaef7c-92ea-8064-8ffb-f4bd6bc8de5c"/><p id="12eaef7c-92ea-80af-9d82-f2c16596d238" class=""><del><em><strong>暂时没想好放什么占位: </strong></em></del><em><strong> —————&gt; </strong></em><strong>那就</strong><mark class="highlight-teal"><strong><span style="border-bottom:0.05em solid">q一下我推的哥哥</span></strong></mark><strong>，，，&amp;放一首小诗</strong></p><div id="12eaef7c-92ea-806d-bcd6-c811b995d08e" class="column-list"><div id="12eaef7c-92ea-8099-ac54-ebcfe88db619" style="width:68.75%" class="column"><figure id="12eaef7c-92ea-8048-929f-d45670e12da2" class="image"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/b411d453c8c084e2b30e2eef952c7efd.jpeg"><img style="width:280.5625px" src="Cherriy%2012daef7c92ea80999a3ecde710887188/b411d453c8c084e2b30e2eef952c7efd.jpeg"/></a></figure></div><div id="12eaef7c-92ea-8079-85ba-e2a006e2b29c" style="width:68.75000000000001%" class="column"><blockquote id="12eaef7c-92ea-80d7-a8a1-ce81faf087bf" class="">静夜 我不能 不能受你的贿赂<br/>谁稀罕你这墙内尺方的和平<br/>我的世界还有更辽阔的边境<br/>这四墙既隔不断战争的喧嚣<br/>你有什么方法静止我的心跳<br/>如只是为了一杯酒 一本诗<br/>静夜里钟摆摇来的闲适<br/>…<br/>最好是让这口里塞满了泥沙<br/>如其他人只会唱着个人的休戚！<br/></blockquote></div></div></div></div><hr id="12eaef7c-92ea-80af-b040-d4259e2972c8"/><h3 id="12daef7c-92ea-80a1-865f-fa74555c72c2" class=""><span style="border-bottom:0.05em solid">功能清单</span></h3><figure id="12daef7c-92ea-80d3-857f-db3eaa261ed4"><div class="source"><a href="Cherriy%2012daef7c92ea80999a3ecde710887188/cherriy%25EF%25BC%2581.pdf">cherriy！.pdf</a></div></figure><div id="12daef7c-92ea-80f4-8521-fb83311c92db" class="column-list"><div id="12daef7c-92ea-80de-b23d-ff174d8c32bc" style="width:20%" class="column"><p id="12daef7c-92ea-80fb-be86-fe656b35f6c2" class="block-color-purple_background">📝  <mark class="highlight-pink"><strong>记账&amp;代办</strong></mark></p><hr id="12daef7c-92ea-8029-8017-e10d04443336"/><ul id="12daef7c-92ea-80cf-8605-fdd45ed820f4" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">选择emoji，选择颜色</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8020-8728-f39c32d05cbd" class="block-color-purple_background to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">账单筛选，排序，删除</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80a3-afa5-d21e3faaa0f5" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">净收入计算</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-801f-8451-d09c157e3ffc" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">自动记账</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80b6-9d8d-d764ca5d6973" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">时间：日/周/月/年</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80a3-997d-dada8c8b7f16" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">目标模式：必要性标签（深浅）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-803b-90e6-cabb00b962f6" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">折线/柱状/饼状图（普通模式/照应目标模式）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-806c-8a9f-ea7c64404b1c" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">状态设置，留言，离目标/基础设定结余/超支xxx</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80da-9636-f14b02e1f763" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">图表展示默认跟随账单筛选，也可以自设定</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-80bd-a6b2-f7b6cffce510" class="block-color-default">
+</p><ul id="12daef7c-92ea-80c5-8b7b-de007a93bd21" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">待办左滑设置提醒（截止时间）/删除</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80cb-b6e7-c19d243f8600" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">习惯设置                                                     </span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80f2-bf27-f89ef9a42e36" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">习惯/目标 完成次数柱状图                    </span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8087-9601-dd62c6173376" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">筛选：列表&amp;图表，按完成次数/剩余次数/截止时间 升序/降序                      </span><div class="indented"></div></li></ul><p id="12daef7c-92ea-808a-a1f3-f0dac5636465" class="block-color-default">
+</p></div><div id="12daef7c-92ea-805b-93b5-c57f9aae4403" style="width:20%" class="column"><p id="12daef7c-92ea-8041-a544-ce2bea3773b1" class="block-color-blue_background">🗓️ <mark class="highlight-blue"><mark class="highlight-blue_background"> </mark></mark><mark class="highlight-blue"><mark class="highlight-blue_background"><strong>计时&amp;日记</strong></mark></mark></p><hr id="12daef7c-92ea-803f-a98a-e01625499279"/><ul id="12daef7c-92ea-80ff-846a-c9274aa0c60a" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">正向计时</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8022-8770-f8e15bfa59d6" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">计时可选选项，计时自输入</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80f8-9c1a-c629afcd7393" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">add from（xx代办）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80e6-b417-ffa19c363517" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">计时进度条5min一格，超出25min可折叠（在设置中设定 减小单位格子长度or增加总进度条长度）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8094-9603-fb0316c8cf02" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">是否开启*以计时作监督*模式：开启时长热力图；计时时长参与每日打分的评估标准</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8041-aafe-dc1876c227e9" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">是否自动记入上课时间→导入课表→每次下课后弹出窗口询问</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-8083-acc8-ce529dc52ccc" class="block-color-default">
+</p><ul id="12daef7c-92ea-80d6-9f79-c9959f527be8" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">emoji选择：添加加号与水平滚动</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8038-8e3e-f6c57cabc735" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">书写日记（笔记）的右下角：日记（随笔）/归于某个习惯/任务 /自分类</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8010-8f80-e01eaa672c18" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">同上，增加*地图*选项，标记位置，同时可查看笔记的地理分布</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8084-81e5-e1b33ff72708" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">日记添加图片</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-809e-b702-ceb8f251e420" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">选择视图：图片放大（右列）or小图列举</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8089-9f79-e3e4bd5a941e" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">筛选：根据标签 / 地点 /时间</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8000-9c75-cef5a516d208" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">排序：时间</span><div class="indented"></div></li></ul></div><div id="12daef7c-92ea-8094-8dd6-e930e5efae4e" style="width:20%" class="column"><p id="12daef7c-92ea-80c3-8339-d6808e162a7c" class="block-color-teal_background">✨ <mark class="highlight-teal"><strong> 归档页面</strong></mark><mark class="highlight-teal"> </mark></p><hr id="12daef7c-92ea-8031-8391-f22cc8cf2f17"/><ul id="12daef7c-92ea-801f-a8b5-d7e7b884ff5e" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">个人页面：头像 背景</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8034-af9a-f4fea5df76fd" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">归档待办：列举（水平滑动）+饼状图（根据次数）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80b8-9953-c5c32128fc0c" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">*⭐*代办 可设置一组，描述原因‘</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80b4-8e27-ef164f58da60" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">归档计时：一共xx h xx min</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8078-a675-e6e5d4f6acec" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">归档计时：列举（水平滑动）+饼状图（根据时间）</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-801a-822b-c314c2f1902c" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">做功排行榜！：为每种计时评一个难度，做功=时长×难度</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-804f-a1f9-f3da2b7cdc93" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">心情emoji统计：横线比例图 右上角展开*全部*视图</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80df-80d8-d7194bbce2a7" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">日记关键词云图</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80ce-9061-f292ae011cda" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">地图页面：观看足迹和日记地点（为某些固定地点设置标签）</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-8088-85ce-f15bb84f5170" class="block-color-default">
+</p></div><div id="12daef7c-92ea-803e-a27c-f1cda8b92414" style="width:20%" class="column"><p id="12daef7c-92ea-8005-8580-d22044da7287" class="block-color-orange_background">💬 <mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong>导航&amp;设置</strong></mark></p><hr id="12daef7c-92ea-8080-b522-dccfd2452ca7"/><ul id="12daef7c-92ea-80c6-9351-cce10f02eb8d" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">appbar…：分享该页面（选取xxx版块column），设置，关于软件/更新</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80ff-a9f0-edcfbfd96a71" class="block-color-orange_background to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">设置界面：主题设置</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80ec-80a5-d23269ee7657" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">主题预览</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8045-88a5-fcab45877f9a" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">背景图片设置</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8074-b439-f5aabb493a8a" class="block-color-orange_background to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">记账类别标签</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80f6-9898-cb509c26d07b" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">记账类别调序</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-800a-bc49-d21f78e89a1a" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">计时：以计时监督模式？</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80d7-8b5f-cb4b4a966b2b" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">导入课表/会议？</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-805e-9532-dbad52d7a260" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">日记常用emoji</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-80e4-ba0c-d9318f1e876d" class="block-color-default">
+</p></div><div id="12daef7c-92ea-808f-b17b-f213c0412ab6" style="width:19.999999999999996%" class="column"><p id="12daef7c-92ea-805a-9ada-e8743bd83eab" class="block-color-yellow_background">🎄  <mark class="highlight-yellow"><strong>目标树&amp;总结日报</strong></mark></p><hr id="12daef7c-92ea-806c-935f-df6a3b837915"/><ul id="12daef7c-92ea-804a-a993-d9742c598fd0" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">目标树：设定时间</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8037-8ba3-fcb91d81a763" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">目标树节点递进关系的*与*&amp;*或*</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80be-bc70-f6301f9a676a" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">倒数三层节点可以编辑*记账**待办**计时*，达成目标条件。达成目标以点亮节点</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8032-8fe7-c23891cc2548" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">选择节点，移动，复制，粘贴</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-8020-b394-ddf2a0011136" class="block-color-default">
+</p><ul id="12daef7c-92ea-803d-b548-ee8d3f754d8d" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">生成每日日报：到点提示补充/or生成备注</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80e9-8d73-cfcbad17bd30" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">每个事项拖动到时间轴（纵向）上，横向排布</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80eb-8f8d-c96c65783585" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">心情emoji，日志摘要：1.2.3.</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-80e1-9c72-d2307180c20a" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">达成昨日____目标？____%!</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8045-a51b-d933ef25659f" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">评分:__×10%＋__×20%+…=___</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-806f-a8b7-e88880e72fcf" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">为本周xxx任务（显示进度条，高亮今日贡献）推动了__%！，同比日均贡献增长了__%!</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8033-9fc0-fbecf028d41d" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">日报版式</span><div class="indented"></div></li></ul><ul id="12daef7c-92ea-8093-bfbf-d28c5dac7fd9" class="block-color-default to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">日报选取板块</span><div class="indented"></div></li></ul><p id="12daef7c-92ea-802f-a5ee-c365e5623b2c" class="block-color-default">
+</p></div></div><p id="12daef7c-92ea-802f-ac9a-da194532a794" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
