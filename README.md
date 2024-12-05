@@ -1,6 +1,6 @@
 # White-Lulu.github.io
 
-http://q-owo-p.top 😋正解 下面的还没更新
+q-owo-p.top 😋正解 下面的还没更新
 
 https://white-lulu.pages.dev/    ✅🔆🔆
 
